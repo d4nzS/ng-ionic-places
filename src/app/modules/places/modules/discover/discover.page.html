@@ -7,6 +7,17 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
+  <ion-segment
+    [value]="segmentButtons[0].value"
+    (ionChange)="onFilterUpdate($event)"
+  >
+    <ion-segment-button
+      *ngFor="let button of segmentButtons"
+      [value]="button.value"
+    >
+      {{ button.title }}
+    </ion-segment-button>
+  </ion-segment>
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
